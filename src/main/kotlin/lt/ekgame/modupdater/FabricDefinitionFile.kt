@@ -1,3 +1,5 @@
+package lt.ekgame.modupdater
+
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.serializer

@@ -1,3 +1,5 @@
+package lt.ekgame.modupdater
+
 import java.nio.file.Path
 
 sealed class ModFile(

@@ -1,3 +1,5 @@
+package lt.ekgame.modupdater
+
 import com.charleskorn.kaml.Yaml
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.arguments.argument
@@ -28,8 +30,7 @@ class Hello : CliktCommand() {
     override fun run() {
         metaProvider = loadMetaSettings()
         runBlocking {
-            ModProvider
-                .scanDirectory(dir)
+            ModProvider.scanDirectory(dir)
                 .forEach { handleModFile(it) }
         }
     }

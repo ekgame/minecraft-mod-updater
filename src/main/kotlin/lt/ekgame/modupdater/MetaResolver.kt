@@ -1,3 +1,5 @@
+package lt.ekgame.modupdater
+
 class MetaResolver(
     private val nativeOverrides: ModMetaDefinitionFile,
     private val userOverrides: ModMetaDefinitionFile? = null,

@@ -1,10 +1,10 @@
+package lt.ekgame.modupdater
+
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromStream
-import java.math.BigInteger
 import java.nio.file.FileVisitResult
 import java.nio.file.Path
-import java.security.MessageDigest
 import java.util.zip.ZipFile
 import kotlin.io.path.*
 
