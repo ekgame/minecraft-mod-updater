@@ -24,7 +24,7 @@ class ModrinthApi {
             })
         }
         install(UserAgent) {
-            agent = "ekgame/minecraft-mod-updater/0.0.1 (ekgame1@gmail.com)"
+            agent = "ekgame/minecraft-mod-updater (ekgame1@gmail.com)"
         }
     }
 
