@@ -12,7 +12,6 @@ data class FabricDefinitionFile(
     @Serializable(with = AuthorSerializer::class)
     val authors: List<String>,
     val version: String,
-    val depends: Map<String, String>,
 )
 
 class AuthorSerializer : JsonTransformingSerializer<List<String>>(ListSerializer(String.serializer())) {
