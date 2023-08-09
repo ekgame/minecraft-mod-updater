@@ -36,7 +36,7 @@ class Hello : CliktCommand() {
     }
 
     fun loadMetaSettings(): MetaResolver {
-        val nativeMetaStream = this::class.java.getResource(".mod-meta.yml")!!.openStream()
+        val nativeMetaStream = this::class.java.getResource("/.mod-meta.yml")!!.openStream()
         val nativeMeta = Yaml.default.decodeFromStream(ModMetaDefinitionFile.serializer(), nativeMetaStream)
 
         val userMetaFile = dir.resolve(".mod-meta.yml")
