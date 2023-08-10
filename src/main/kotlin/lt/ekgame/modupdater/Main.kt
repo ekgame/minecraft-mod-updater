@@ -51,11 +51,15 @@ class Hello : CliktCommand() {
     }
 
     suspend fun handleModFile(file: ModFile) {
-        when (file) {
-            is ModFile.FabricModFile -> handleFabricModFile(file)
-            is ModFile.InvalidModFile -> {
-                echo("Invalid mod \"${file.path.fileName}\" (skipped) - ${file.reason}", err = true)
+        try {
+            when (file) {
+                is ModFile.FabricModFile -> handleFabricModFile(file)
+                is ModFile.InvalidModFile -> {
+                    echo("Invalid mod \"${file.path.fileName}\" (skipped) - ${file.reason}", err = true)
+                }
             }
+        } catch (e: Exception) {
+            echo("Failed to update mod \"${file.path.fileName}\" - ${e.message}", err = true)
         }
     }
 
