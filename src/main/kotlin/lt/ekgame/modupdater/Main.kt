@@ -9,6 +9,7 @@ import com.github.ajalt.clikt.parameters.options.prompt
 import com.github.ajalt.clikt.parameters.types.path
 import kotlinx.coroutines.runBlocking
 import java.nio.file.Path
+import java.util.*
 import kotlin.io.path.exists
 import kotlin.io.path.inputStream
 import kotlin.io.path.isRegularFile
@@ -116,7 +117,13 @@ class Hello : CliktCommand() {
         }
 
         val mods = api.searchMods(searchQuery)
-        return mods.hits.find { it.title == file.name }
+        return mods.hits.find { normalizeModName(it.title) == normalizeModName(file.name) }
+    }
+
+    fun normalizeModName(name: String): String {
+        return name
+            .replace("\\s".toRegex(), "")
+            .lowercase(Locale.getDefault())
     }
 }
 
