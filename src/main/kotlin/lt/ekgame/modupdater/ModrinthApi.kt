@@ -76,8 +76,6 @@ class ModrinthApi {
         @SerialName("project_type")
         val projectType: String,
         val downloads: Int,
-        @SerialName("icon_url")
-        val iconUrl: String,
         val versions: List<String>,
     )
 
