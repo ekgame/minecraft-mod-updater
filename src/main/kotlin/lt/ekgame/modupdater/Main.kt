@@ -97,7 +97,7 @@ class Hello : CliktCommand() {
             return
         }
 
-        file.path.moveTo(file.path.resolveSibling("${file.path.fileName}.disabled"))
+        file.path.moveTo(file.path.resolveSibling("${file.path.fileName}.disabled"), true)
         val newPath = file.path.resolveSibling(latestFile.filename)
         echo("Downloading new version of ${file.name} to ${newPath.fileName}")
         api.downloadFile(latestFile.url, newPath)
